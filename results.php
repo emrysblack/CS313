@@ -22,6 +22,7 @@
     </div>
     <hr/>
     <?php
+         $votes = array();
          $myfile = fopen("results.txt", "r");
          for(int $i = 0; !feof($myfile); $i++)
          {
