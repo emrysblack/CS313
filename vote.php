@@ -35,7 +35,7 @@
        <input type="radio" name="vote" value="4"/>Episode IV - A New Hope<br/>
        <input type="radio" name="vote" value="5"/>Episode V - The Empire Strikes Back<br/>
        <input type="radio" name="vote" value="6"/>Episode VI - Return of the Jedi<br/>
-       <input type="radio" name="vote" value="0"/>I don't like any of them<br/><br/>
+       <input type="radio" name="vote" value="7"/>I don't like any of them<br/><br/>
        <input type="submit" value="vote"/>
     </form>
     <br/>
@@ -45,9 +45,19 @@
     </div>
        <?php
       if (isset($_COOKIE["voted"]))
-         echo "Voted";
+      {
+         // redirect to results page
+         echo "redirect</br>";
+      }
       elseif ($_GET["vote"])
-         echo "hi<br/>";
+      {
+         // write to file
+         echo "written<br/>";
+         // set cookie
+         setcookie("voted""$_GET['vote']");
+         // redirect to results page
+         echo "redirect</br>";
+      }
     ?>
   </body>
 </html>
