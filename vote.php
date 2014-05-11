@@ -54,7 +54,7 @@
          // write to file
          echo "written<br/>";
          // set cookie
-         setcookie("voted""$_GET['vote']");
+         setcookie("voted", $_GET["vote"]);
          // redirect to results page
          echo "redirect</br>";
       }
