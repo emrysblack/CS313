@@ -52,10 +52,17 @@
       elseif ($_GET["vote"])
       {
          // write to file
+         $votes = array();
          $myfile = fopen("results.txt", "r");
-         for(int $i = 0; !feof($myfile); $i++)
+         for($i = 0; !feof($myfile); $i++)
          {
              $votes[$i] = fgets($myfile);
+         }
+         fclose($myfile);
+         $myfile = fopen("results.txt", "w");
+         for($i = 0; $i < 7; $i++)
+         {
+             fwrite($myfile, $votes[$i]);
          }
          fclose($myfile);
          // set cookie

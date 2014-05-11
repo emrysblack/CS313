@@ -33,12 +33,12 @@
                 'padding:10px 40px; background:#dddddd;' . 
                 'width:300px; border-radius:25px">' .
                 'Episode I - The Phantom Menace: ' . $votes[0] . '<br/>' .
-       'Episode II - Attack of the Clones<br/>' .
-       'Episode III - Revenge of the Sith<br/>' .
-       'Episode IV - A New Hope<br/>' .
-       'Episode V - The Empire Strikes Back<br/>' .
-       'Episode VI - Return of the Jedi<br/>' .
-       "I don't like any of them<br/>" .
+       'Episode II - Attack of the Clones: ' . $votes[1] . '<br/>' .
+       'Episode III - Revenge of the Sith: ' . $votes[2] . '<br/>' .
+       'Episode IV - A New Hope: ' . $votes[3] . '<br/>' .
+       'Episode V - The Empire Strikes Back: ' . $votes[4] . '<br/>' .
+       'Episode VI - Return of the Jedi: ' . $votes[5] . '<br/>' .
+       "I don't like any of them: " . $votes[6] . '<br/>' .
        '</div>';
     ?>
   </body>
