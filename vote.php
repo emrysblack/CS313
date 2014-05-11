@@ -60,9 +60,13 @@
          }
          fclose($myfile);
          $myfile = fopen("results.txt", "w");
-         for($i = 0; $i < 7; $i++)
+         for($i = 0; $i < count($votes); $i++)
          {
-             fwrite($myfile, $votes[$i]);
+            (int)$item = $votes[$i];
+            if ($i + 1 == $_GET["vote"])
+               (int)$item = (int)$item + 1;
+             fwrite($myfile, (int)$item);
+             fwrite($myfile, "\n");
          }
          fclose($myfile);
          // set cookie
