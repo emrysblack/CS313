@@ -46,7 +46,7 @@
        <?php
       if (isset($_COOKIE["voted"]))
          echo "Voted";
-      elseif ($_GET["vote"] == 4)
+      elseif ($_GET["vote"])
          echo "hi<br/>";
     ?>
   </body>
