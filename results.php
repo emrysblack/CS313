@@ -23,7 +23,10 @@
     <hr/>
     <?php
          $myfile = fopen("results.txt", "r");
-         echo fgets($myfile);
+         while(!feof($myfile))
+         {
+            echo fgets($myfile) . "<br>";
+         }
          fclose($myfile);
        echo'<div style="margin:auto; border:2px solid #a1a1a1;' . 
                 'padding:10px 40px; background:#dddddd;' . 

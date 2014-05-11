@@ -53,7 +53,10 @@
       {
          // write to file
          $myfile = fopen("results.txt", "r");
-         echo fgets($myfile);
+         while(!feof($myfile))
+         {
+            echo fgets($myfile) . "<br>";
+         }
          fclose($myfile);
          // set cookie
          setcookie("voted", $_GET["vote"]);
