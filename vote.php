@@ -53,9 +53,9 @@
       {
          // write to file
          $myfile = fopen("results.txt", "r");
-         while(!feof($myfile))
+         for(int $i = 0; !feof($myfile); $i++)
          {
-            echo fgets($myfile) . "<br>";
+             $votes[$i] = fgets($myfile);
          }
          fclose($myfile);
          // set cookie

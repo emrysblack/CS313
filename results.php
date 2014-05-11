@@ -23,15 +23,15 @@
     <hr/>
     <?php
          $myfile = fopen("results.txt", "r");
-         while(!feof($myfile))
+         for(int $i = 0; !feof($myfile); $i++)
          {
-            echo fgets($myfile) . "<br>";
+             $votes[$i] = fgets($myfile);
          }
          fclose($myfile);
        echo'<div style="margin:auto; border:2px solid #a1a1a1;' . 
                 'padding:10px 40px; background:#dddddd;' . 
                 'width:300px; border-radius:25px">' .
-                'Episode I - The Phantom Menace<br/>' .
+                'Episode I - The Phantom Menace: ' . $votes[0] . '<br/>' .
        'Episode II - Attack of the Clones<br/>' .
        'Episode III - Revenge of the Sith<br/>' .
        'Episode IV - A New Hope<br/>' .
