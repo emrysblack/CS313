@@ -52,7 +52,9 @@
       elseif ($_GET["vote"])
       {
          // write to file
-         echo "written<br/>";
+         $myfile = fopen("results.txt", "r");
+         echo fgets($myfile);
+         fclose($myfile);
          // set cookie
          setcookie("voted", $_GET["vote"]);
          // redirect to results page

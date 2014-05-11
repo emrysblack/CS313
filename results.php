@@ -22,6 +22,9 @@
     </div>
     <hr/>
     <?php
+         $myfile = fopen("results.txt", "r");
+         echo fgets($myfile);
+         fclose($myfile);
        echo'<div style="margin:auto; border:2px solid #a1a1a1;' . 
                 'padding:10px 40px; background:#dddddd;' . 
                 'width:300px; border-radius:25px">' .
@@ -31,7 +34,7 @@
        'Episode IV - A New Hope<br/>' .
        'Episode V - The Empire Strikes Back<br/>' .
        'Episode VI - Return of the Jedi<br/>' .
-       'I do not like any of them<br/>' .
+       "I don't like any of them<br/>" .
        '</div>';
     ?>
   </body>
