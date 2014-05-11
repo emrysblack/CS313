@@ -47,7 +47,7 @@
       if (isset($_COOKIE["voted"]))
       {
          // redirect to results page
-         echo "redirect</br>";
+         echo '<script>window.location = "results.php"</script>';
       }
       elseif ($_GET["vote"])
       {
@@ -56,7 +56,7 @@
          // set cookie
          setcookie("voted", $_GET["vote"]);
          // redirect to results page
-         echo "redirect</br>";
+         echo '<script>window.location = "results.php"</script>';
       }
     ?>
   </body>
