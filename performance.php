@@ -28,7 +28,7 @@
     <div style="margin:auto; border:2px solid #a1a1a1; 
                 padding:10px 40px; background:#dddddd; 
                 width:300px; border-radius:25px">
-    <form action="" method="GET">
+    <form action="" method="POST">
        <input type="text" name="name" placeholder="name"/><br/><br/>
        <input type="submit" value="Submit"/>
     </form>
@@ -36,17 +36,29 @@
     </p>
     </div>
     <?php
-      try
-      {
-         $user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-         $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-         $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
-         $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
-         $pdo = new PDO("mysql:host=$host:$port;dbname=php", $user, $password);
-      }
-      catch(PDOException $e)
-      {
-         echo 'ERROR: ' . $e->getMessage();
+    if (isset($_POST["name"]))
+    {
+         try
+         {
+            $user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+            $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+            $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
+            $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
+            $pdo = new PDO("mysql:host=$host:$port;dbname=php", $user, $password);
+         }
+         catch(PDOException $e)
+         {
+            echo 'ERROR: ' . $e->getMessage();
+            die("Could not connect to database");
+         }
+         $pdo = $db->prepare("SELECT * FROM Student WHERE name=:name");
+         $pdo->bindValue(':name', $_POST["name"], PDO::PARAM_STR);
+         $pdo->execute();
+         $rows = $pdo->fetchAll(PDO::FETCH_ASSOC);
+         foreach($rows as $row)
+         {
+            print $row . <br/>
+         }
       }
     ?>
   </body>
