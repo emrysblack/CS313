@@ -40,8 +40,9 @@
       {
          $username = "adminHjLJ4vT";
          $password = "45sj_EbggidU";
-         $conn = new PDO('mysql:host=localhost;dbname=PianoPower', $username, $password);
-         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+         $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
+         $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
+         $pdo = new PDO("mysql:host=$host:$port;dbname=php", $user, $password);
       }
       catch(PDOException $e)
       {
