@@ -28,7 +28,7 @@
     <div style="margin:auto; border:2px solid #a1a1a1; 
                 padding:10px 40px; background:#dddddd; 
                 width:300px; border-radius:25px">
-    <form action="" method="POST">
+    <form action="" method="GET">
        <input type="text" name="name" placeholder="name"/><br/><br/>
        <input type="submit" value="Submit"/>
     </form>
@@ -36,7 +36,7 @@
     </p>
     </div>
     <?php
-    if (isset($_POST["name"]))
+    if (isset($_GET["name"]))
     {
          try
          {
