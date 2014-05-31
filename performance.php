@@ -68,7 +68,7 @@
          print '</table>';
          }
          else
-            print 'No rows returned';
+            print 'No record for ' . $_POST["name"];
          print '</div>';
       }
     ?>
