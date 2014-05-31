@@ -51,10 +51,10 @@
             echo 'ERROR: ' . $e->getMessage();
             die("Could not connect to database");
          }
-         $pdo = $db->prepare("SELECT * FROM Student WHERE name=:name");
-         $pdo->bindValue(':name', $_POST["name"]);
-         $pdo->execute();
-         $rows = $pdo->fetchAll(PDO::FETCH_ASSOC);
+         $db = $pdo->prepare("SELECT * FROM Student WHERE name=:name");
+         $db->bindValue(':name', $_POST["name"]);
+         $db->execute();
+         $rows = $db->fetchAll(PDO::FETCH_ASSOC);
   //      foreach($rows as $row)
   //       {
   //          print $row['name'] . <br/>
