@@ -55,10 +55,10 @@
          $pdo->bindValue(':name', $_POST["name"]);
          $pdo->execute();
          $rows = $pdo->fetchAll(PDO::FETCH_ASSOC);
-        foreach($rows as $row)
-         {
-            print $row['name'] . <br/>
-         }
+  //      foreach($rows as $row)
+  //       {
+  //          print $row['name'] . <br/>
+  //       }
       }
     ?>
   </body>
