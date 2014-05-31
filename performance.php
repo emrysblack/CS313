@@ -38,8 +38,8 @@
     <?php
       try
       {
-         $user = "adminHjLJ4vT";
-         $password = "45sj_EbggidU";
+         $user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+         $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
          $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
          $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
          $pdo = new PDO("mysql:host=$host:$port;dbname=php", $user, $password);
