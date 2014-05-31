@@ -52,7 +52,7 @@
             die("Could not connect to database");
          }
          $db = $pdo->prepare("SELECT * FROM Student WHERE name=:name");
-         $db->bindValue(':name', $_POST["name"]);
+         $db->bindParam(':name', $_POST["name"]);
          $db->execute();
          $rows = $db->fetchAll();
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
