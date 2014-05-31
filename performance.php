@@ -40,7 +40,7 @@
       {
          $username = "adminHjLJ4vT";
          $password = "45sj_EbggidU";
-         $conn = new PDO('mysql:host=localhost;dbname=php', $username, $password);
+         $conn = new PDO('mysql:host=localhost;dbname=PianoPower', $username, $password);
          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }
       catch(PDOException $e)
