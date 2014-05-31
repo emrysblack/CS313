@@ -55,10 +55,12 @@
          $db->bindValue(':name', $_POST["name"]);
          $db->execute();
          $rows = $db->fetchAll(PDO::FETCH_ASSOC);
+         print '<table>';
          foreach($rows as $row)
          {
-            print "<p>item</p><br/>";//$row['name'] . <br/>
+            print '<tr>' . $row['name'] . '<tr/>';
          }
+         print '</table>';
       }
     ?>
   </body>
