@@ -55,12 +55,17 @@
          $db->bindValue(':name', $_POST["name"]);
          $db->execute();
          $rows = $db->fetchAll();
-         print '<table>';
+         if(count($rows))
+         {
+         print '<table>';       
          foreach($rows as $row)
          {
             print '<tr>' . $row['name'] . '<tr/>';
          }
          print '</table>';
+         }
+         else
+            print '<p>No rows returned</p>';
       }
     ?>
   </body>
