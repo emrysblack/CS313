@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <script type = "text/javascript" src = "iJs.js"></script>
   <link href = "iStyle.css" type = "text/css" rel = "stylesheet">
-  <title>Voting</title>
+  <title>Performances</title>
   </head>
   <body>
     <h1>CS 313</h1>
@@ -54,7 +54,7 @@
          $db = $pdo->prepare("SELECT * FROM Student WHERE name=:name");
          $db->bindValue(':name', $_POST["name"]);
          $db->execute();
-         $rows = $db->fetchAll(PDO::FETCH_ASSOC);
+         $rows = $db->fetchAll();
          print '<table>';
          foreach($rows as $row)
          {
