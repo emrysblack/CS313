@@ -38,7 +38,7 @@
     <?php
       try
       {
-         $username = "adminHjLJ4vT";
+         $user = "adminHjLJ4vT";
          $password = "45sj_EbggidU";
          $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
          $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
