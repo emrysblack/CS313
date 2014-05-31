@@ -55,6 +55,9 @@
          $db->bindValue(':name', $_POST["name"]);
          $db->execute();
          $rows = $db->fetchAll();
+         print '<div style="margin:auto; border:2px solid #a1a1a1; 
+                padding:10px 40px; background:#dddddd; 
+                width:300px; border-radius:25px">';
          if(count($rows))
          {
          print '<table>';       
@@ -65,7 +68,8 @@
          print '</table>';
          }
          else
-            print '<p>No rows returned</p>';
+            print 'No rows returned';
+         print '</div>';
       }
     ?>
   </body>
