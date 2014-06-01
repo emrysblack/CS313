@@ -52,10 +52,10 @@
             die("Could not connect to database");
          }
          $name = $_POST["name"];
-         $db = $pdo->prepare("SELECT * FROM Student");
+         $db = $pdo->prepare("SELECT username FROM Student");
        //  $db->bindParam(':name', $name);
          $db->execute();
-         $rows = $db->fetchAll(PDO::FETCH_ASSOC);
+         $rows = $db->fetchAll();
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
                 padding:10px 40px; background:#dddddd; 
                 width:300px; border-radius:25px">';
@@ -64,7 +64,7 @@
             print '<table>';       
             foreach($rows as $row)
             {
-               print '<tr>' . count($rows) . '<tr/>';
+               print '<tr>' . $row . '<tr/>';
             }
             print '</table>';
          }
