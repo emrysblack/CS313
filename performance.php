@@ -64,7 +64,7 @@
          print '<table>';       
          foreach($rows as $row)
          {
-            print '<tr>' . $row['name'] . '<tr/>';
+            print '<tr>' . $row . '<tr/>';
          }
          print '</table>';
          }
