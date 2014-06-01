@@ -57,8 +57,8 @@
          $db->execute();
          $rows = $db->fetchAll();
          $db = $pdo->prepare("SELECT * FROM Performance WHERE studentId=:id");
-         print $rows . '<br/>';
-         $db->bindParam(':id', $rows);
+         print $rows[0] . '<br/>';
+         $db->bindParam(':id', $rows[0]);
          $db->execute();
          $rows = $db->fetchAll();
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
