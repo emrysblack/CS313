@@ -51,9 +51,9 @@
             echo 'ERROR: ' . $e->getMessage();
             die("Could not connect to database");
          }
-         $name = "\"" . $_POST["name"] . "\"";
-         $db = $pdo->prepare("SELECT name FROM Student WHERE name=:name");
-         $db->bindParam(':name', $name);
+         $name = $_POST["name"];
+         $db = $pdo->prepare("SELECT * FROM Student");
+       //  $db->bindParam(':name', $name);
          $db->execute();
          $rows = $db->fetchAll(PDO::FETCH_ASSOC);
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
