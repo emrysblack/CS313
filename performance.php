@@ -61,12 +61,12 @@
                 width:300px; border-radius:25px">';
          if(count($rows))
          {
-         print '<table>';       
-         foreach($rows as $row)
-         {
-            print '<tr>' . count($rows) . '<tr/>';
-         }
-         print '</table>';
+            print '<table>';       
+            foreach($rows as $row)
+            {
+               print '<tr>' . count($rows) . '<tr/>';
+            }
+            print '</table>';
          }
          else
             print 'No record for ' . $name;
