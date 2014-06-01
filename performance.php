@@ -61,7 +61,7 @@
             {
                $id = (int)$row['id'];
             }
-         $db = $pdo->prepare("SELECT * FROM Performance WHERE studentId=:id");
+         $db = $pdo->prepare("SELECT * FROM Performance INNER JOIN Student ON Performance.studentId WHERE studentId=:id");
          print $id . '<br/>';
          $db->bindParam(':id', $id);
          $db->execute();
@@ -74,7 +74,7 @@
             print '<table>';       
             foreach($rows as $row)
             {
-               print '<tr>' . '<td>' . $row['studentId'] . '</td>' . '</tr>';
+               print '<tr>' . '<td>' . $row['student'] . '</td>' . '</tr>';
             }
             print '</table>';
          }
