@@ -52,13 +52,18 @@
             die("Could not connect to database");
          }
          $name = $_POST["name"];
-         $db = $pdo->prepare("SELECT id FROM Student WHERE name=:name");
+         $db = $pdo->prepare("SELECT * FROM Student WHERE name=:name");
          $db->bindParam(':name', $name);
          $db->execute();
          $rows = $db->fetchAll();
+         $id = 123;
+         foreach($rows as $row)
+            {
+               $id = (int)$row['id'];
+            }
          $db = $pdo->prepare("SELECT * FROM Performance WHERE studentId=:id");
-         print $rows[0] . '<br/>';
-         $db->bindParam(':id', $rows[0]);
+         print $id . '<br/>';
+         $db->bindParam(':id', $id);
          $db->execute();
          $rows = $db->fetchAll();
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
