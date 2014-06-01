@@ -52,7 +52,7 @@
             die("Could not connect to database");
          }
          $name = $_POST["name"];
-         $db = $pdo->prepare("SELECT username FROM Student");
+         $db = $pdo->prepare("SELECT * FROM Student");
        //  $db->bindParam(':name', $name);
          $db->execute();
          $rows = $db->fetchAll();
@@ -64,7 +64,7 @@
             print '<table>';       
             foreach($rows as $row)
             {
-               print '<tr>' . $row . '<tr/>';
+               print '<tr>' . $row['name'] . '<tr/>';
             }
             print '</table>';
          }
