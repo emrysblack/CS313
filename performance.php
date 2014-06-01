@@ -51,7 +51,7 @@
             echo 'ERROR: ' . $e->getMessage();
             die("Could not connect to database");
          }
-         $name = $_POST["name"];
+         $name = "\"" . $_POST["name"] . "\"";
          $db = $pdo->prepare("SELECT name FROM Student WHERE name=:name");
          $db->bindParam(':name', $name);
          $db->execute();
