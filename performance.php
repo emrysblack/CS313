@@ -55,7 +55,7 @@
          $db = $pdo->prepare("SELECT * FROM Student WHERE id=:name");
          $db->bindParam(':name', 1);
          $db->execute();
-         $rows = $db->fetchAll();
+         $rows = $db->fetchAll(PDO::FETCH_ASSOC);
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
                 padding:10px 40px; background:#dddddd; 
                 width:300px; border-radius:25px">';
