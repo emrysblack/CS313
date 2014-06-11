@@ -44,7 +44,7 @@
             $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
             $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
             $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
-            $pdo = new PDO("mysql:host=$host:$port;dbname=PianoPower", $user, $password);
+            $pdo = new PDO("mysql:host=$host:$port;dbname=pianopower", $user, $password);
          }
          catch(PDOException $e)
          {
@@ -52,31 +52,29 @@
             die("Could not connect to database");
          }
          $name = $_POST["name"];
-         $db = $pdo->prepare("SELECT * FROM Student WHERE name=:name");
+         $db = $pdo->prepare("SELECT Student.name, Skill.level, Instrument.name, Type.name, Building.name, Room.number, Time.slot FROM Student 
+         INNER JOIN Performance ON Student.id = Performance.studentId 
+         INNER JOIN Skill ON Performance.SkillId = Skill.id
+         INNER JOIN Instrument ON Performance.instrumentId = Instrument.id
+         INNER JOIN Type ON Performance.typeId = Type.id
+         INNER JOIN Room ON Performance.roomId = Room.id 
+         INNER JOIN Building ON Room.buildingId = Building.id
+         INNER JOIN Time ON Performance.timeId = Time.id         
+         WHERE Student.name=:name");
          $db->bindParam(':name', $name);
          $db->execute();
-         $rows = $db->fetchAll();
-         $id = 123;
-         foreach($rows as $row)
-            {
-               $id = (int)$row['id'];
-            }
-         $db = $pdo->prepare("SELECT * FROM Performance INNER JOIN Student ON Performance.studentId WHERE studentId=:id");
-         print $id . '<br/>';
-         $db->bindParam(':id', $id);
-         $db->execute();
-         $rows = $db->fetchAll(PDO::FETCH_ASSOC);
+         $rows = $db->fetchAll(PDO::FETCH_NUM);
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
                 padding:10px 40px; background:#dddddd; 
                 width:300px; border-radius:25px">';
          if(count($rows))
          {
-            print '<table>';       
             foreach($rows as $row)
             {
-               print '<tr>' . '<td>' . $row['student'] . '</td>' . '</tr>';
+               print '<b>' . $row[0] . '</b>' . '<br/>' . $row[1] . 
+               '<br/>' . $row[2] . ' ' . $row[3] . 
+               '<br/>' . $row[4] . ' ' . $row[5] . '<br/>' . date("H:i ",strtotime($row[6])) . '<br/>';
             }
-            print '</table>';
          }
          else
             print 'No record for ' . $name;
