@@ -1,12 +1,12 @@
-<?xml version = "1.0" encoding = "utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!doctype html>
+<html lang="en">
 <!--Assignments Page
    Conatins links to other assignments
   -->
-<html xmlns = "http://www.w3.org/1999/xhtml">
-  <head>    
-    <title>Brady Field's Assignment #13</title>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Music Register</title>
     <script>
     function duet(show)
 {
