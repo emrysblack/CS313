@@ -44,7 +44,7 @@
             $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
             $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
             $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
-            $pdo = new PDO("mysql:host=$host:$port;dbname=pianopower", $user, $password);
+            $pdo = new PDO("mysql:host=$host:$port;dbname=PianoPower", $user, $password);
          }
          catch(PDOException $e)
          {
