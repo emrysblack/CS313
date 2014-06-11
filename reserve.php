@@ -31,11 +31,11 @@
         <table>
           <tr>
             <td>
-              <input type="radio" name="pType" value="Solo" 
+              <input type="radio" name="pType" value="1" 
                      onclick="duet(false)" checked/>Solo
-              <input type="radio" name="pType" value="Duet" 
+              <input type="radio" name="pType" value="2" 
                      onclick="duet(true)"/>Duet
-              <input type="radio" name="pType" value="Concerto" 
+              <input type="radio" name="pType" value="3" 
                      onclick="duet(false)"/>Concerto
             </td>
           </tr>
@@ -108,7 +108,14 @@
           </tr>
           <tr>
             <td>
-              <input type="text" name="location" placeholder="Building Name"/>
+              <select name="location">
+                <option value="slot"disabled selected>Building Name</option>
+                <option name="time" value="1">Hinkley</option>
+                <option name="time" value="2">Kirkham</option>
+                <option name="time" value="3">Manwaring Center</option>
+                <option name="time" value="4">Snow</option>
+                <option name="time" value="5">Spori</option>
+              </select>
               <input type="text" name="room" placeholder="Room #" size = "5"/>
             </td>
           </tr>
@@ -174,19 +181,42 @@
          $timeS = $_POST["time"];
          $passW = "student";
          $userN = $_POST["fName"];
+         $nId = $_POST["fName"];
+         $pType = $_POST["pType"];
          
-         //print $name . ' ' . $sId . ' ' . $userN . ' ' . $passW;
+         // insert student
          $db = $pdo->prepare("INSERT INTO Student (name, studentNum, username, password) VALUES (:name,:num, :user,:pass)");
          $db->bindValue(':name', $name, PDO::PARAM_STR);
          $db->bindValue(':num', $sId, PDO::PARAM_INT);
          $db->bindValue(':user', $userN, PDO::PARAM_STR);
          $db->bindValue(':pass', $passW, PDO::PARAM_STR);
-         $success = $db->execute();
-         print $success . '<br/>';
+         $db->execute();
+         
+         // get new id
+         $db = $pdo->prepare("SELECT Student.id FROM Student WHERE Student.name=:name");
+         $db->bindParam(':name', $name);
+         $db->execute();
+         $rows = $db->fetchAll(PDO::FETCH_NUM);
+         if(count($rows))
+         {
+            foreach($rows as $row)
+            {
+               $nId = $row[0];
+            }
+         }
+         else
+            print 'No record for ' . $name;
+         // insert performance
+         $db = $pdo->prepare("INSERT INTO Performance (studentId, skillId, instrumentId, typeId, roomId, timeId) 
+         VALUES (:nId,:skill, :inst,:type, :room, :time)");
+         $db->bindValue(':nId', $nId, PDO::PARAM_INT);
+         $db->bindValue(':skill', $skill, PDO::PARAM_INT);
+         $db->bindValue(':inst', $inst, PDO::PARAM_INT);
+         $db->bindValue(':type', $pType, PDO::PARAM_INT);
+         $db->bindValue(':room', $roomId, PDO::PARAM_INT);
+         $db->bindValue(':time', $timeS, PDO::PARAM_INT);
+         $db->execute();
         // $rows = $db->fetchAll(PDO::FETCH_NUM);
-         print '<div style="margin:auto; border:2px solid #a1a1a1; 
-                padding:10px 40px; background:#dddddd; 
-                width:300px; border-radius:25px">';
      //    if(count($rows))
        //  {
            // foreach($rows as $row)
