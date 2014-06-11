@@ -12,14 +12,6 @@
   </head>
   <body>
     <h1>CS 313</h1>
-    <div id="links">
-    <div>
-      <a href = "index.php">Home</a>
-      </div>
-      <div>
-      <a href = "assignments.html">Assignments</a>
-      </div>
-    </div>
     <hr/>
     <div>
     <p class="p1">
@@ -44,7 +36,16 @@
             $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
             $host = getEnv("OPENSHIFT_MYSQL_DB_HOST");
             $port = getEnv("OPENSHIFT_MYSQL_DB_PORT");
-            $pdo = new PDO("mysql:host=$host:$port;dbname=PianoPower", $user, $password);
+            $dbname = "PianoPower";
+            if ($user == '')
+            {
+            $user = "root";
+            $password = "";
+            $host = 'localhost';
+            $port = 3306;
+            $dbname = "pianopower";
+            }
+            $pdo = new PDO("mysql:host=$host:$port;dbname=$dbname", $user, $password);
          }
          catch(PDOException $e)
          {
