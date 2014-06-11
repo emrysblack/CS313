@@ -175,13 +175,14 @@
          $passW = "student";
          $userN = $_POST["fName"];
          
-         print $name . ' ' . $sId . ' ' . $userN . ' ' . $passW;
-         $db = $pdo->prepare("INSERT INTO Student (name, studentNum, username, password) VALUES (:name,:num,user:,:pass)");
+         //print $name . ' ' . $sId . ' ' . $userN . ' ' . $passW;
+         $db = $pdo->prepare("INSERT INTO Student (name, studentNum, username, password) VALUES (:name,:num, :user,:pass)");
          $db->bindValue(':name', $name, PDO::PARAM_STR);
          $db->bindValue(':num', $sId, PDO::PARAM_INT);
          $db->bindValue(':user', $userN, PDO::PARAM_STR);
          $db->bindValue(':pass', $passW, PDO::PARAM_STR);
-         $db->execute();
+         $success = $db->execute();
+         print $success . '<br/>';
         // $rows = $db->fetchAll(PDO::FETCH_NUM);
          print '<div style="margin:auto; border:2px solid #a1a1a1; 
                 padding:10px 40px; background:#dddddd; 
