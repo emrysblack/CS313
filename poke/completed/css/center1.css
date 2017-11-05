@@ -1,0 +1,138 @@
+body{
+   background: #000000;
+}
+#backdrop {
+   position:absolute;
+   background: #000000 url('img/interiors/center1_main.png') no-repeat;
+   width:600px;
+   height:372px;
+   left:350px;
+   top:150px;
+   z-index:-3;
+}
+
+.boundary.top,.boundary.bottom {
+   position:absolute;
+   width:600px;
+   height:110px;
+   left:350px;
+}
+.boundary.left,.boundary.right {
+   position:absolute;
+   width:150px;
+   height:372px;
+   top:150px;
+}
+.boundary.top {
+   top:100px;
+}
+.boundary.bottom {
+   top:512px;
+}
+.boundary.left {
+   left:200px;
+}
+.boundary.right {
+   left:950px;
+}
+.boundary.top-left,.boundary.top-right {
+   position:absolute;
+   width:160px;
+   height:85px;
+   top:150px;
+}
+.boundary.bottom-left,.boundary.bottom-right {
+   position:absolute;
+   width:40px;
+   height:70px;
+   top:452px;
+}
+.boundary.top-left,.boundary.bottom-left {
+   left:350px;
+}
+.boundary.top-right,.boundary.bottom-right {
+   left:910px;
+}
+.furniture {
+   position:absolute;
+   width:80px;
+   height:95px;
+   top:351px;
+   left:789px;
+}
+.furniture1 {
+   position:absolute;
+   width:37px;
+   height:80px;
+   top:390px;
+   left:910px;
+}
+.service-desk {
+   position:absolute;
+   top:150px;
+   left:510px;
+   width:278px;
+   height:140px;
+}
+.comp {
+   position:absolute;
+   top:150px;
+   left:788px;
+   width:38px;
+   height:70px;
+}
+.staircase.lower {
+   position:absolute;
+   top:434px;
+   left:350px;
+   width:80px;
+   height:18px;
+}
+.staircase.upper {
+   position:absolute;
+   top:362px;
+   left:350px;
+   width:80px;
+   height:10px;
+}/*
+.staircase {
+   position:absolute;
+   top:372px;
+   left:350px;
+   width:35px;
+   height:54px;
+  // outline: 1px dotted yellow;
+}*/
+#front{
+   position:absolute;
+   width:32px;
+   height:32px;
+   top:472px;
+   left:633px;
+}
+#front > .doorway {
+   position:absolute;
+   width:65px;
+   height:50px;
+   top:40px;
+   left:-17px;
+}
+#center1_stairs{
+   position:absolute;
+   width:32px;
+   height:32px;
+   top:394px;
+   left:434px;
+}
+#center1_stairs > .doorway {
+   position:absolute;
+   width:54px;
+   height:62px;
+   top:-22px;
+   left:-84px;
+}
+/* must go last to check for loading */
+#loaded {
+   left:100%;
+   top:100%;
+}

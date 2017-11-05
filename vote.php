@@ -49,7 +49,7 @@
          // redirect to results page
          echo '<script>window.location = "results.php"</script>';
       }
-      elseif ($_GET["vote"])
+      elseif (isset($_GET["vote"]))
       {
          // write to file
          $votes = array();

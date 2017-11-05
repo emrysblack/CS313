@@ -1,0 +1,718 @@
+/* splash screens */
+body,html {
+   width:100%;
+   height:100%;
+}
+body{
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+}
+
+/* navigation panels for scrolling */
+
+.nav {
+	position:fixed;
+}
+
+.nav.up {
+	width:100%;
+	height:20%;
+	left:0;
+	top:0;
+}
+.nav.down {
+	width:100%;
+	height:20%;
+	left:0;
+	bottom:0;
+}
+.nav.left {
+	width:20%;
+	height:100%;
+	left:0;
+	top:0;
+}
+.nav.right {
+	width:20%;
+	height:100%;
+	right:0;
+	top:0;
+}
+
+#loaded {
+position:absolute;
+left:0%;
+top:0%;
+width: 0px;
+height: 0px;
+}
+
+#character {
+	width: 32px;
+	height: 32px;
+	
+	position: absolute;
+	left: 200px;
+	top: 250px;
+
+	background: url('img/male_2.png') no-repeat;
+	background-position: -32px 0px;
+	z-index: -1;
+}
+#character.front-right { background-position: 0px 0px; }
+#character.front-stand { background-position: -32px 0px; }
+#character.front-left { background-position: -64px 0px; }
+
+#character.left-right { background-position: 0px -32px; }
+#character.left-stand { background-position: -32px -32px; }
+#character.left-left { background-position: -64px -32px; }
+
+#character.right-right { background-position: -64px -64px; }
+#character.right-stand { background-position: -32px -64px; }
+#character.right-left { background-position: -0px -64px; }
+
+#character.back-right { background-position: 0px -96px; }
+#character.back-stand { background-position: -32px -96px; }
+#character.back-left { background-position: -64px -96px; }
+
+/* general objects */
+.trees {
+	position: absolute;
+	background: url('img/tree1.png') repeat 0 0;
+	width: 32px;
+	height: 48px;
+}
+
+.doorway {
+	position: absolute;
+	overflow: hidden; /* important for door animation */
+}
+
+.shadow {
+   background: rgba(0, 0, 0, 0.7);
+   position: absolute;
+   z-index: -3;
+}
+
+.door {
+	z-index: -2;
+	position: absolute;
+}
+
+/*house 1 properties */
+.house1 {
+	background: url('img/house1.png') no-repeat;
+	width: 200px;
+	height: 140px;
+	position: absolute;
+}
+
+.house1 .doorway {
+	width: 35px;
+	height: 85px;
+	left:42px;
+	top:55px;
+}
+
+.house1 .doorway .shadow{
+	width: 35px;
+	height: 80px;
+}
+
+.house1 .door {
+	background: url('img/house1_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:5px;
+}
+
+/*house 2 properties */
+.house2 {
+	position: absolute;
+	width: 200px;
+}
+
+.house2 .house1 {
+	width: 200px;
+	height: 140px;
+	position: absolute;
+}
+
+.house2 .doorway {
+   height:105px;
+}
+
+.house2 .door {
+   bottom:25px;
+}
+
+.house2 .plant-left {
+	background: url('img/house2_plant_left.png') no-repeat;
+	width: 38px;
+	height: 40px;
+	margin: 120px 0 0 2px;
+   position:absolute;
+}
+.house2 .plant-right {
+	background: url('img/house2_plant_right.png') no-repeat;
+	width: 117px;
+	height: 40px;
+	margin: 120px 0 0 80px;
+   position:absolute;
+}
+
+/*house 3 properties */
+.house3 {
+	background: url('img/house3.png') no-repeat;
+	width: 200px;
+	height: 177px;
+	position: absolute;
+}
+
+.house3 .doorway {
+	width: 35px;
+	height: 80px;
+	left:42px;
+	top:95px;
+}
+
+.house3 .door {
+	background: url('img/house3_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/*house 4 properties */
+.house4 {
+	background: url('img/house4.png') no-repeat;
+	width: 199px;
+	height: 135px;
+	position: absolute;
+}
+
+.house4 .doorway {
+	width: 35px;
+	height: 80px;
+	left:42px;
+	top:52px;
+}
+
+.house4 .door {
+	background: url('img/house3_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/*house 5 properties */
+.house5{
+	background: url('img/house5.png') no-repeat;
+	width: 240px;
+	height: 140px;
+	position: absolute;
+}
+
+.house5 .doorway {
+	width: 35px;
+	height: 80px;
+	left:82px;
+	top:55px;
+}
+
+.house5 .door {
+	background: url('img/house5_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/* house 6 properties */
+.house6 {
+	position:absolute;
+	background: url('img/house6.png') no-repeat;
+	width:160px;
+	height:155px;
+}
+.house6 .doorway {
+	width: 36px;
+	height: 80px;
+	left:41px;
+	top:55px;
+}
+.house6 .door-right {
+	background: url('img/house6_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right:0;
+	bottom:0;
+}
+.house6 .building {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:160px;
+	height:137px;
+}
+.house6 .plants {
+	position:absolute;
+	left:93px;
+	bottom:0px;
+	width:54px;
+	height:34px;
+}
+
+/*house 7 properties */
+.house7{
+	background: url('img/house7.png') no-repeat;
+	width: 200px;
+	height: 138px;
+	position: absolute;
+}
+
+.house7 .doorway {
+	width: 35px;
+	height: 80px;
+	left:82px;
+	top:55px;
+}
+
+.house7 .door {
+	background: url('img/house7_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/*house 8 properties */
+.house8{
+	background: url('img/house8.png') no-repeat;
+	width: 160px;
+	height: 177px;
+	position: absolute;
+}
+
+.house8 .doorway {
+	width: 35px;
+	height: 80px;
+	left:42px;
+	top:95px;
+}
+
+.house8 .door {
+	background: url('img/house8_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/*house 9 properties */
+.house9{
+	background: url('img/house9.png') no-repeat;
+	width: 280px;
+	height: 307px;
+	position: absolute;
+}
+
+.house9 .front .doorway {
+	width: 35px;
+	height: 80px;
+	left:122px;
+	top:225px;
+}
+
+.house9 .door {
+	background: url('img/house8_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+.house9 .rear .doorway {
+	width: 90px;
+	height: 80px;
+	left:95px;
+	top:0px;
+}
+
+/* lab 1 properties */
+.lab1{
+	background: url('img/lab1.png') no-repeat;
+	width: 280px;
+	height: 178px;
+	position: absolute;
+}
+
+.lab1 .doorway {
+	width: 35px;
+	height: 80px;
+	left:123px;
+	top:95px;
+}
+
+.lab1 .door {
+	background: url('img/lab1_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/* poke center 1 properties */
+.center1 {
+	background: url('img/center1.png') no-repeat;
+	width: 200px;
+	height: 175px;
+	position: absolute;
+}
+
+.center1 .doorway {
+	width: 35px;
+	height: 85px;
+	left:83px;
+	top:90px;
+}
+
+.center1 .door {
+	background: url('img/center1_door.png') no-repeat;
+	width: 35px;
+	height: 32px;
+	bottom:5px;
+}
+
+.center1 .doorway .shadow{
+	width: 35px;
+	height: 80px;
+}
+
+/* poke mart 1 properties */
+.mart1 {
+	background: url('img/mart1.png') no-repeat;
+	width: 160px;
+	height: 155px;
+	position: absolute;
+}
+
+.mart1 .doorway {
+	width: 35px;
+	height: 80px;
+	left:82px;
+	top:69px;
+}
+
+.mart1  .door {
+	background: url('img/center1_door.png') no-repeat;
+	width: 35px;
+	height: 32px;
+	bottom:0;
+}
+
+/* gym 1 properties */
+.gym1 {
+	background: url('img/gym1.png') no-repeat;
+	width: 240px;
+	height: 195px;
+	position: absolute;
+}
+
+.gym1 .doorway {
+	width: 36px;
+	height: 80px;
+	left:122px;
+	top:113px;
+}
+
+.gym1  .door-left {
+	background: url('img/gym1_door_left.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	left:0;
+	bottom:0;
+}
+.gym1  .door-right {
+	background: url('img/gym1_door_right.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	right:0;
+	bottom:0;
+}
+.gym1  .sign{
+	position:absolute;
+	background: url('img/gym1_sign.png') no-repeat;
+	width: 37px;
+	height: 53px;
+	left:-40px;
+	bottom:1px;
+	
+}
+.gym1  .building {
+	position:absolute;
+	width: inherit;
+	height: 175px;
+	left:0;
+	top:0;
+}
+.gym1  .entrance{
+	position:absolute;
+	width: 70px;
+	height: 80px;
+	left:105px;
+	top:113px;
+	
+}
+
+/* gym 2 properties */
+.gym2 {
+	position: absolute;
+	background: url('img/gym2.png') no-repeat;
+	width:280px;
+	height:223px;
+}
+
+.gym2 .building{
+	position: absolute;
+	width:280px;
+	height:212px;
+}
+.gym2 .archway .left_pillar{
+	position: absolute;
+	width:15px;
+	height:15px;
+	left:100px;
+	bottom:0px;
+}
+.gym2 .archway .right_pillar{
+	position: absolute;
+	width:15px;
+	height:15px;
+	left:160px;
+	bottom:0px;
+}
+.gym2 .doorway {
+	width: 36px;
+	height: 80px;
+	left:122px;
+	top:131px;
+}
+.gym2 .door-left {
+	background: url('img/gym1_door_left.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	left:0;
+	bottom:0;
+}
+.gym2 .door-right {
+	background: url('img/gym1_door_right.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	right:0;
+	bottom:0;
+}
+
+/* club1 properties */
+.club1 {
+	position:absolute;
+	background: url('img/club1.png') no-repeat;
+	width:200px;
+	height:175px;
+}
+.club1 .doorway {
+	width: 36px;
+	height: 80px;
+	left:42px;
+	top:75px;
+}
+.club1  .door-right {
+	background: url('img/house6_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right:0;
+	bottom:0;
+}
+.club1 .building {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:200px;
+	height:155px;
+	
+}
+.club1 .plants {
+	position:absolute;
+	left:100px;
+	bottom:0px;
+	width:77px;
+	height:34px;
+}
+
+/* daycare 1 properties */
+.daycare1 {
+	background: url('img/daycare1.png') no-repeat;
+	width: 200px;
+	height: 180px;
+	position: absolute;
+}
+
+.daycare1 .doorway {
+	width: 35px;
+	height: 80px;
+	left:82px;
+	top:95px;
+}
+
+.daycare1 .door {
+	background: url('img/house5_door.png') no-repeat;
+	width: 35px;
+	height: 35px;
+	right: 0;
+	bottom:0;
+}
+
+/* tower 1 properties */
+.tower1 {
+	position:absolute;
+	background: url('img/tower1.png') no-repeat;
+	width:275px;
+	height:599px;
+}
+.tower1 .doorway {
+	width:40px;
+	height:80px;
+	left:117px;
+	bottom:0px;
+}
+.tower1 .entrance {
+	position:absolute;
+	background: url('img/tower1_entrance.png') no-repeat;
+	width:40px;
+	height:38px;
+	z-index: -2;
+	left:0px;
+	bottom:2px;
+}
+.tower1 .base {
+	position:absolute;
+	width:275px;
+	height:275px;
+	left:0px;
+	bottom:0px;
+}
+/* game 1 properties */
+.game1 {
+	position: absolute;
+}
+
+.game1 .main {
+	position: absolute;
+	background: url('img/game1.png') no-repeat;
+	width:279px;
+	height:192px;
+}
+.game1 .main .building{
+	position: absolute;
+	width:279px;
+	height:175px;
+}
+.game1 .main .archway .left_pillar{
+	position: absolute;
+	width:15px;
+	height:15px;
+	left:100px;
+	bottom:0px;
+}
+.game1 .main .archway .right_pillar{
+	position: absolute;
+	width:15px;
+	height:15px;
+	left:160px;
+	bottom:0px;
+}
+.game1 .side {
+	position:absolute;
+	background: url('img/game1_side.png') no-repeat;
+	width:119px;
+	height:137px;
+	left:279px;
+}
+.game1 .main .doorway {
+	width: 36px;
+	height: 80px;
+	left:121px;
+	top:95px;
+}
+.game1 .main .door-left {
+	background: url('img/gym1_door_left.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	left:0;
+	bottom:0;
+}
+.game1 .main .door-right {
+	background: url('img/gym1_door_right.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	right:0;
+	bottom:0;
+}
+.game1 .side .doorway {
+	width: 36px;
+	height: 80px;
+	left:41px;
+	top:55px;
+}
+.game1 .side .door-left {
+	background: url('img/gym1_door_left.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	left:0;
+	bottom:0;
+}
+.game1 .side .door-right {
+	background: url('img/gym1_door_right.png') no-repeat;
+	width: 18px;
+	height: 33px;
+	right:0;
+	bottom:0;
+}
+
+.fountain1 {
+	position: absolute;
+	width: 100px;
+	height: 108px;
+	background: url('img/fountain1.png') no-repeat;
+	animation: fountain1_animate 1s steps(5) infinite;
+}
+@keyframes fountain1_animate {
+	100% { background-position: -500px 0px; }
+}
+
+.road1 {
+	z-index: -5;
+	position: absolute;
+	background: url('img/road2.png') repeat 0 0;
+	top: 50%;
+	left: 50%;
+	//outline: 1px dotted;
+}
+.sea {
+	position:absolute;
+	background: url('img/sea.png') repeat scroll 0% 0%;
+	animation: 6s linear 0s normal none infinite running seamove;
+}
+@keyframes seamove {
+	from { background-position: 0px 0px; }
+	to { background-position: 65px 0px; }
+}
+.tallgrass1 {
+	position:absolute;
+	background: url('img/tallgrass2.png') repeat scroll 0% 0%;
+	z-index:-5;
+}

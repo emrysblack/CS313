@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<style>
+.youtube-popup {
+  position: relative;
+  width: 560px; /* equal to the iframe width */
+  height: 315px; /* equal to the iframe height */
+}
+
+.youtube-popup > div {
+  position: absolute;
+  width: 560px; /* equal to the iframe width */
+  height: 315px; /* equal to the iframe height */
+  top: 0;
+  z-index: 100;
+}
+</style>
+<script>
+$('.youtube-popup > div').click(function(){
+        alert("play");
+});
+</script>
+</head>
+<body>
+  <div class="youtube-popup">
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/uqS0KnmXXiY" frameborder="0" allowfullscreen></iframe>
+    <div></div>
+  </div>
+</body>
+</html>

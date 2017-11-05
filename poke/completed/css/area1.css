@@ -1,0 +1,121 @@
+body{
+	background: #000000 url('img/grass1.png') repeat;
+}
+
+.trees#t1 {	left:550px; top:350px; }
+.trees#t2 {	left:440px; top:50px; }
+.trees#t3 {	left:310px; top:300px; }
+
+#house1 {
+	left:130px;
+	top:100px;
+}
+
+#house2 {
+	left:150px; 
+	top:360px;
+}
+
+#house3 {
+	left:380px; 
+	top:770px;
+}
+
+#house4 {
+	left:630px; 
+	top:770px;
+}
+
+#house5 {
+	left:880px; 
+	top:770px;
+}
+
+#house6 {
+	left:130px; 
+	top:570px;
+}
+
+#house7 {
+	left:380px; 
+	top:570px;
+}
+
+#house8 {
+	left:130px; 
+	top:1070px;
+}
+
+#house9 {
+	left:380px; 
+	top:1070px;
+}
+#lab1 {
+	left:710px; 
+	top:1070px;
+}
+#center1 {
+	left:630px;
+	top:370px;
+}
+#mart1 {
+	left:840px;
+	top:370px;
+}
+#gym1 {
+	left:630px;
+	top:50px;
+}
+#gym2 {
+	left:1300px;
+	top:5px;
+}
+#club1 {
+	left:130px; 
+	top:770px;	
+}
+#daycare1 {
+	left:930px;
+	top:5px;
+}
+#tower1 {
+	left:1300px;
+	top:300px;
+}
+#game1 {
+	left:1800px;
+	top:60px;
+}
+
+#fountain1 {
+	left:430px;
+	top:120px;
+}
+#road1 {
+	//width:17px;
+	//height: 17px;
+	width: 1000px;
+	height: 34px;
+	//margin: 0 0 0 0;
+	left:0px;
+	top:270px;
+}
+/*
+#sea1 {
+	width:130px;
+	height:126px;
+	left:0px;
+	top:0px;
+}
+*/
+#tallgrass1 {
+	width:160px;
+	height:160px;
+	left:1000px;
+	top:206px;
+}
+/* must go last to check for loading */
+#loaded {
+   left:100%;
+   top:100%;
+}

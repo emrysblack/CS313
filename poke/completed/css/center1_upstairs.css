@@ -1,0 +1,138 @@
+body{
+   background: #000000;
+}
+#backdrop {
+   position:absolute;
+   background: #000000 url('img/interiors/center1_top.png') no-repeat;
+   width:600px;
+   height:372px;
+   left:350px;
+   top:150px;
+   z-index:-3;
+}
+.boundary.top,.boundary.bottom {
+   position:absolute;
+   width:600px;
+   height:110px;
+   left:350px;
+}
+.boundary.left,.boundary.right {
+   position:absolute;
+   width:150px;
+   height:372px;
+   top:150px;
+}
+.boundary.top {
+   top:100px;
+}
+.boundary.bottom {
+   top:512px;
+}
+.boundary.left {
+   left:200px;
+}
+.boundary.right {
+   left:950px;
+}
+.boundary.top-left,.boundary.top-right {
+   position:absolute;
+   width:160px;
+   height:85px;
+   top:150px;
+}
+.boundary.bottom-left,.boundary.bottom-right {
+   position:absolute;
+   width:40px;
+}
+.boundary.bottom-left {
+   height:70px;
+   top:452px;
+}
+.boundary.bottom-right {
+   height:170px;
+   top:352px;
+}
+.boundary.top-left,.boundary.bottom-left {
+   left:350px;
+}
+.boundary.top-right,.boundary.bottom-right {
+   left:910px;
+}
+.furniture, .furniture1 {
+   position:absolute;
+   width:120px;
+   height:40px;
+   top:430px;
+}
+.plant, .plant1 {
+   position:absolute;
+   width:40px;
+   height:70px;
+   top:440px;
+}
+.plant {
+   left:470px;
+}
+.plant1 {
+   left:870px;
+}
+.furniture {
+   left:550px;
+}
+.furniture1 {
+   left:710px;
+}
+.service-desk {
+   position:absolute;
+   top:150px;
+   left:350px;
+   width:560px;
+   height:137px;
+}
+.comp {
+   position:absolute;
+   top:230px;
+   left:470px;
+   width:38px;
+   height:70px;
+}
+.staircase.lower {
+   position:absolute;
+   top:434px;
+   left:350px;
+   width:80px;
+   height:18px;
+}
+.staircase.upper {
+   position:absolute;
+   top:362px;
+   left:350px;
+   width:80px;
+   height:10px;
+}
+.staircase {
+   position:absolute;
+   top:434px;
+   left:350px;
+   width:80px;
+   height:18px;
+}
+#stairs{
+   position:absolute;
+   width:32px;
+   height:32px;
+   top:394px;
+   left:434px;
+}
+#stairs > .doorway {
+   position:absolute;
+   width:54px;
+   height:62px;
+   top:-22px;
+   left:-84px;
+}
+/* must go last to check for loading */
+#loaded {
+   left:100%;
+   top:100%;
+}

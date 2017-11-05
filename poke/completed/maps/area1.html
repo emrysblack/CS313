@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- contains instances and placements of objects for current map -->
+	<link rel="stylesheet" type="text/css" href="css/area1.css"/>
+	<style>
+	</style>
+</head>
+<body>
+<!-- objects -->
+<div class="fountain1 obstacle" id="fountain1"></div>
+
+<div class="trees obstacle" id="t1"></div>
+<div class="trees obstacle" id="t2"></div>
+<div class="trees obstacle" id="t3"></div>
+
+<!-- buildings -->
+
+<div class="house1 obstacle" id="house1">
+	<div class="doorway auto_passable front" id="house1_front">
+      <a class="door_link" href="area1.html" name="house1_front"></a>
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+
+<div class="house2" id="house2">
+	<div class="house1 obstacle">
+		<div class="doorway auto_passable front" id="house2_front">
+         <a class="door_link" href="area1.html" name="house2_front"></a>
+			<div class="door door-right"></div>
+         <div class="shadow"></div>
+		</div>
+	</div>
+	<div class="plant-left obstacle"></div>
+	<div class ="plant-right obstacle"></div>
+</div>
+<div class="house3 obstacle" id="house3">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="house4 obstacle" id="house4">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="house5 obstacle" id="house5">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="house6" id="house6">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+	<div class="building obstacle"></div>
+	<div class="plants obstacle"></div>
+</div>
+<div class="house7 obstacle" id="house7">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="house8 obstacle" id="house8">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="house9 obstacle" id="house9">
+	<div class="front">
+		<div class="doorway auto_passable">
+			<div class="door door-right"></div>
+         <div class="shadow"></div>
+		</div>
+	</div>
+	<div class="rear">
+		<div class="doorway auto_passable">
+			<div class="entrance"></div>
+		</div>
+	</div>
+</div>
+<div class="lab1 obstacle" id="lab1">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="center1 obstacle" id="center1">
+	<div class="doorway auto_passable front" id="center1_front">
+      <a class="door_link" href="center1.html" name="front"></a>
+		<div class="door door-up"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="mart1 obstacle" id="mart1">
+	<div class="doorway auto_passable">
+		<div class="door door-up"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+<div class="gym1" id="gym1">
+	<div class="doorway auto_passable">
+		<div class="door door-left"></div>
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+	<div class="sign obstacle"></div>
+	<div class="building obstacle"></div>
+	<div class="entrance obstacle"></div>
+</div>
+
+<div class="club1" id="club1">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+	<div class="building obstacle"></div>
+	<div class="plants obstacle"></div>
+</div>
+
+<div class="daycare1 obstacle" id="daycare1">
+	<div class="doorway auto_passable">
+		<div class="door door-right"></div>
+      <div class="shadow"></div>
+	</div>
+</div>
+
+<div class="tower1" id="tower1">
+	<div class="doorway auto_passable front" id="tower1_front">
+      <a class="door_link" href="area1.html" name="tower1_front"></a>
+		<div class="entrance"></div>
+	</div>
+	<div class="base obstacle"></div>
+</div>
+<div class="game1" id="game1">
+	<div class="main">
+		<div class="building obstacle"></div>
+		<div class="archway">
+			<div class="doorway auto_passable">
+				<div class="door door-left"></div>
+				<div class="door door-right"></div>
+            <div class="shadow"></div>
+			</div>
+			<div class="left_pillar obstacle"></div>
+			<div class="right_pillar obstacle"></div>
+		</div>
+	</div>
+	<div class="side obstacle">
+		<div class="doorway auto_passable">
+			<div class="door door-left"></div>
+			<div class="door door-right"></div>
+         <div class="shadow"></div>
+		</div>
+	</div>
+</div>
+<div class="gym2" id="gym2">
+	<div class="building obstacle"></div>
+	<div class="archway">
+		<div class="doorway auto_passable">
+			<div class="door door-left"></div>
+			<div class="door door-right"></div>
+         <div class="shadow"></div>
+		</div>
+		<div class="left_pillar obstacle"></div>
+		<div class="right_pillar obstacle"></div>
+	</div>
+</div>
+
+<!-- roads and navigation -->
+<div class="road1 passable" id="road1"></div>
+<!-- terrain -->
+<div id="sea1" class="sea"></div>
+<div id="tallgrass1" class="tallgrass1"></div>
+</body>
+</html>

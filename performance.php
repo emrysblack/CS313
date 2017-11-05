@@ -39,11 +39,11 @@
             $dbname = "PianoPower";
             if ($user == '')
             {
-            $user = "root";
-            $password = "";
-            $host = 'localhost';
-            $port = 3306;
-            $dbname = "pianopower";
+               $user = "root";
+               $password = "";
+               $host = 'localhost';
+               $port = 3306;
+               $dbname = "pianopower";
             }
             $pdo = new PDO("mysql:host=$host:$port;dbname=$dbname", $user, $password);
          }
